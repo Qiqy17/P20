@@ -5,19 +5,36 @@
     <title>P01</title>
 </head>
 <body>
-<h2>1. 随机产生一些1—100之间的整数，直到产生的数为50为止。</h2>
+<h2>1. 随机产生一些 <input value="1" id="start">
+    —<input value="100" id="end">之间的整数，
+    直到产生的数为<input value="50" id="target">为止。</h2>
+<button onclick="solve()">开始计算</button>
 <p id="screen">
 
 
 </p>
 <script>
-    var ans=[]
-    while (true) {
-        var t = Math.floor(Math.random() * 100) + 1;
-        ans.push(t);
-        if (t === 50) break;
+    function solve() {
+        var start = document.getElementById('start').value;
+        var end = document.getElementById('end').value;
+        var target = document.getElementById('target').value;
+        start = parseInt(start);
+        end = parseInt(end);
+        target = parseInt(target);
+        if (start > end || target < start || target > end) {
+            alert('参数非法');
+            return;
+        }
+
+        var ans = []
+        while (true) {
+            var t = Math.floor(Math.random() * (end - start + 1)) + start;
+            ans.push(t);
+            if (t === target) break;
+        }
+        document.getElementById('screen').innerHTML = ans;
     }
-    document.getElementById('screen').innerHTML=ans;
+
 
 </script>
 </body>
