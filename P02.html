@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>P02</title>
+</head>
+<body>
+计算1—1000之间能同时被3和5整除的整数的和
+<script>
+    var c = 0;
+    for (var i = 1; i <= 1000; i++) {
+        if (i % 3 == 0 && i % 5 == 0)
+            c = c + i;
+
+    }
+    document.write(c);
+</script>
+</body>
+</html>
