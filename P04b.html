@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>P04</title>
+</head>
+<h1>
+    一百匹马驮一百块瓦，一匹大马可以驮3块，一匹母马可驮2块，小马2匹可驮1块。试编程求需要各种马多少匹？
+
+</h1>
+<body>
+<pre>
+<script>
+
+    var n = 100;
+    for (var x = 0; x <= n / 3; x++)
+        for (var y = 0; y <= n / 2; y++) {
+            var z = n - x - y;
+            if (3 * x + 2 * y + z / 2 == n)
+                document.write(x + ',' + y + ',' + z + '\n');
+        }
+</script>
+</pre>
+</body>
+</html>
