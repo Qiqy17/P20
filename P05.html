@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>P04</title>
+</head>
+<h1>
+    有三种纪念邮票，第一种每套一张售价2元，第二种每套一张售价4元，第三种每套9张售价2元。现用100元买了100张邮票，问这三种邮票各买几张？
+
+</h1>
+<body>
+<pre>
+<script>
+
+    var n = 100;
+    for (var x = 0; x <= n / 2; x++)
+        for (var y = 0; y <= n / 4; y++) {
+            var z = n - x - y;
+            if (2 * x + 4 * y + 2 * z / 9 == n)
+                document.write(x + ',' + y + ',' + z + '\n');
+        }
+</script>
+</pre>
+</body>
+</html>
