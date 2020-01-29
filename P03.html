@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>P03 </title>
+</head>
+<body>
+<h1>打印下列图形：
+    <pre>
+        1
+       121
+      12321
+       121
+        1
+    </pre>
+
+
+</h1>
+<pre>
+
+    <script>
+        var S=' ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    var n = 26;
+    for (var i = 1; i < n; i++) {
+        document.write('\n');
+        for (var j = 1; j <= n - i; j++) {
+            document.write(' ');
+        }
+        for (var j = 1; j <= i; j++) {
+            document.write(S[j]);
+        }
+        for (var j = i - 1; j >= 1; j--) {
+            document.write(S[j]);
+        }
+    }
+    for (var i = n; i >= 1; i--) {
+        document.write('\n');
+        for (var j = 1; j <= n - i; j++) {
+            document.write(' ');
+        }
+        for (var j = 1; j <= i; j++) {
+            document.write(S[j]);
+        }
+        for (var j = i - 1; j >= 1; j--) {
+            document.write(S[j]);
+        }
+    }
+
+</script>
+</pre>
+
+</body>
+</html>
