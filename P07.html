@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>P07</title>
+</head>
+<body>
+<h2>
+    找数。一个三位数，各位数字互不相同，十位数字比个位、百位数字之和还要大，且十位、百位数字之和不是质数。编程找出所有符合条件的三位数。
+    注：1. 不能手算后直接打印结果。
+    2. “质数”即“素数”，是指除1和自身外，再没有其它因数的大于1的自然数。
+</h2>
+
+<script>
+    var primers = [2, 3, 5, 7, 11, 13, 17];
+    for (var a = 1; a <= 9; a++)
+        for (var b = 0; b <= 9; b++)
+            for (var c = 0; c <= 9; c++) {
+                if (b <= a + c) continue;
+                if (a == b || a == c || b == c) continue;
+                if (primers.indexOf(a + b) >= 0) continue;
+                document.write(100 * a + 10 * b + c + ' ');
+            }
+
+
+</script>
+</body>
+</html>

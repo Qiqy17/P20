@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>game</title>
+</head>
+<h1>
+    <pre>
+         大家好
+        +好啊好
+        ------
+        大家好啊
+    </pre>
+
+
+</h1>
+<body>
+<pre>
+<script>
+for (var a = 1; a <= 9; a++)
+    for (var b = 0; b <= 9; b++)
+        for (var c = 1; c <= 9; c++)
+            for (var d = 0; d <= 9; d++) {
+                if (a == b || a == c || a == d || b == c || b == d || c == d) continue;
+                var x = 100 * a + 10 * b + c;
+                var y = 100 * c + 10 * d + c;
+                var z = 1000 * a + 100 * b + 10 * c + d;
+                if (x + y == z)
+                    document.write(x + ',' + y + ',' + z + '\n');
+            }
+</script>
+</pre>
+</body>
+</html>
