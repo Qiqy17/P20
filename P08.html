@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>P01</title>
+</head>
+<body>
+<h2>
+    选人。一个小组共五人，分别为A、B、C、D、E。现有一项任务，要他们中的3个人去完成。
+    已知：（1）A、C不能都去；（
+    2）B、C不能都不去；
+    （3）如果C去了，D、E就只能去一个，且必须去一个；
+    （4）B、C、D不能都去；
+    （5）如果B去了，D、E就不能都去。
+    编程找出此项任务该由哪三人去完成的所有组合。
+
+</h2>
+
+<script>
+    for (var a = 0; a <= 1; a++)
+        for (var b = 0; b <= 1; b++)
+            for (var c = 0; c <= 1; c++)
+                for (var d = 0; d <= 1; d++)
+                    for (var e = 0; e <= 1; e++) {
+                        if (a + b + c + d + e !== 3) continue;
+                        if (a + c === 2) continue;
+                        if (b + c === 0) continue;
+                        if (c === 1 && d + e !== 1) continue;
+                        if (b + c + d === 3) continue;
+                        if (b === 1 && d + e === 2) continue;
+
+                        document.write(' ' + a + b + c + d + e);
+                    }
+
+
+</script>
+</body>
+</html>
