@@ -16,9 +16,10 @@
     for (var x = 0; x <= n; x++)
         for (var y = 0; y <= n; y++)
             for (var z = 0; z <= n; z++) {
-                if (x + y + z == n && 3 * x + 2 * y + z / 2 == n)
-                    document.write(x + ',' + y + ',' + z + '\n');
-            }
+                for (var z = 0; z <= n; z++) {
+                    if (x + y + z == n && 3 * x + 2 * y + z / 2 == n)
+                        document.write(x + ',' + y + ',' + z + '\n');
+                }
 </script>
 </pre>
 </body>

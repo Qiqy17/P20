@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>P16</title>
+</head>
+<h1>
+    试编程找出能被G位数字之和整除的一切两位数。
+
+</h1>
+<body>
+
+<script>
+    for (let n = 10; n <= 99; n++) {
+        let a = Math.floor(n / 10);
+        let b = n % 10;
+        if (n % (a + b) !== 0) continue;
+        document.write(n + ' ');
+    }
+</script>
+
+</body>
+</html>
