@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let Q = [1, 2, 3, 4, 5];
+    while (Q.length > 0) {
+        document.write(Q[0]);
+        Q.shift();
+        if (Q.length == 0)break
+        let x = Q[0];
+        Q.shift();
+        Q.push(x);
+    }
+
+</script>
+</body>
+</html>
