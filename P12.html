@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>P12</title>
+</head>
+<h1>
+    截数问题: 任意一个自然数，我们可以将其平均截取成三个自然数。
+    例如自然数135768，可以截取成13,57,68三个自然数。如果某自然数不能平均截取(位数不能被3整除)，
+    可将该自然数高位补零后截取。现编程从键盘上输入一个自然数N(N的位数<12)，
+    计算截取后第一个数加第三个数减第二个数的结果。
+</h1>
+<body>
+<pre>
+<script>
+    let n = 135768;
+    n = n + "";
+    let k = n.length % 3;
+    if (k === 1)
+        n = '00' + n;
+    if (k === 2)
+        n = '0' + n;
+    //document.write(n);
+    let w = n.length / 3;
+    let x = n.substring(0, w);
+    let y = n.substring(w, 2 * w);
+    let z = n.substring(2 * w);
+    //document.write(x + ' ' + y + ' ' + z);
+    x = parseInt(x);
+    y = parseInt(y);
+    z = parseInt(z);
+    document.write(x + z - y);
+
+
+
+</script>
+
+</pre>
+</body>
+</html>
