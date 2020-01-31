@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>P09</title>
+</head>
+<h1>
+    输入一个字符串，内有数字和非数字字符。如A123X456Y7A，302ATB567BC，
+    打印字符串中所有连续（指不含非数字字符）的数字所组成的整数，
+    并统计共有多少个整数。
+</h1>
+<body>
+<pre>
+<script>
+let str = 'A123X456Y7A，302ATB567BC';
+str = str.replace(/\D+/g, ' ').trim();
+//document.write(str);
+let arr = str.split(' ');
+arr = arr.map((x) => (parseInt(x)));
+//document.write('arr='+arr);
+let sum = arr.reduce((x, y) => (x + y));
+document.write(sum);
+
+</script>
+</pre>
+</body>
+</html>
