@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let n = 13;
+    let D = [];
+    for (let i = 0; i < n; i++) {
+        let R = [];
+        for (let j = 0; j < n; j++)R.push(0);
+        D.push(R);
+    }
+
+    let x = n - 1, y = Math.floor(n / 2);
+    D[x][y] = 1;
+    for (let k = 2; k <= n * n; k++) {
+        let nx = (x + 1) % n, ny = (y + 1) % n;
+        if (D[nx][ny] != 0) {
+            nx = (x - 1 + n) % n, ny = y;
+        }
+        D[nx][ny] = k;
+        x = nx, y = ny;
+    }
+
+    document.write('<table border="1" align="middle">');
+    for (let i = 0; i < n; i++) {
+        document.write('<tr>')
+        for (let j = 0; j < n; j++) {
+            document.write('<td>' + D[i][j] + "</td>");
+        }
+        document.write('</tr>');
+    }
+    document.write('</table>');
+
+</script>
+
+</body>
+</html>
