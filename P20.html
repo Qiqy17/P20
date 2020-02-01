@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>P20</title>
+</head>
+<h1>
+    有30个男人女人和小孩同在一家饭馆进餐，共花了五十先令，其中男宾3先令，女宾2先令，小孩1先令。试编程求出男人女人小孩各多少人？
+
+</h1>
+<body>
+<pre>
+<script>
+
+    var n = 30;
+    for (var x = 0; x <= n; x++)
+        for (var y = 0; y <= n; y++)
+            for (var z = 0; z <= n; z++) {
+
+                if (x + y + z == n && 3 * x + 2 * y + z == 50)
+                    document.write(x + ',' + y + ',' + z + '\n');
+            }
+</script>
+</pre>
+</body>
+</html>
