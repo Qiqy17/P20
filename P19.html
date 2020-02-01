@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>P19</title>
+</head>
+<h1>
+    从键盘上输入两个不超过32767的整数，试编程序用竖式加法形式显示计算结果。
+    例如: 输入 123, 85
+    显示: 　123
+    　　+ 　85
+    　　-------------
+    　　　208
+</h1>
+<body>
+<pre>
+<script>
+  let a = 123;
+  let b = 85;
+  let c = a + b;
+  a = a + '';
+  b = b + '';
+  c = c + '';
+  let k = c.length;
+  while (a.length < k)
+      a = ' ' + a;
+  while (b.length < k)
+      b = ' ' + b;
+  document.write(a + '<br>');
+  document.write(b + '<br>');
+  document.write('---------' + '<br>');
+  document.write(c + '<br>');
+</script>
+
+</pre>
+</body>
+</html>
