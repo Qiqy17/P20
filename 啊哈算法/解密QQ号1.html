@@ -9,14 +9,12 @@
 
 <script>
     let n = 13;
-    let Q = [];
-    for (let i = 1; i <= n; i++) {
-        Q.push(i);
-    }
+    let Q = [1, 12, 2, 8, 3, 11, 4, 9, 5, 13, 6, 10, 7];
+
     while (Q.length > 0) {
         document.write(Q[0] + " ");
         Q.shift();
-        if (Q.length == 0)break
+        if (Q.length == 0) break
         let x = Q[0];
         Q.shift();
         Q.push(x);

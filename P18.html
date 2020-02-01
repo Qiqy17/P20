@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>P18</title>
+</head>
+<h1>
+    某本书的页码从1开始，小明算了算，总共出现了202个数1，试编程求这本书一共有多少页？
+</h1>
+<body>
+<pre>
+<script>
+  function f(x) {
+      x = x + '';
+      var s = 0;
+      for (var i = 0; i < x.length; i++) {
+          if (x[i] === '1')
+              s++;
+      }
+      return s;
+  }
+
+  // document.write(f(1011));
+  var s = 0;
+  for (var i = 1; ; i++) {
+      s = s + f(i);
+      if (s >= 203) {
+          document.write(i);
+          break;
+      }
+  }
+  // document.write(s);
+</script>
+
+</pre>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+
+    </title>
+</head>
+<h1>
+
+</h1>
+<body>
+<pre>
+<script>
+
+let n = 13;
+let Q = [];
+for (let i = n; i >= 1; i--) {
+    if (Q.length > 1) {
+        let x = Q[Q.length - 1];
+        Q.pop();
+        Q.unshift(x);
+    }
+    Q.unshift(i);
+}
+document.write(Q);
+
+
+</script>
+
+</pre>
+</body>
+</html>
