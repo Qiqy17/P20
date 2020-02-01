@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>P11</title>
+</head>
+<h1>
+    甲、乙、丙、丁四人共有糖若干块，
+    甲先拿出一些糖分给另外三人，使他们三人的糖数加倍；
+    乙拿出一些糖分给另外三人，也使他们三人的糖数加倍；
+    丙、丁也照此办理，
+    此时甲、乙、丙、丁四人各有16块，
+    编程求出四个人开始各有糖多少块。
+</h1>
+<body>
+<pre>
+<script>
+    var n = 64;
+    for (var a = n / 2; a <= n; a++)
+        for (var b = 1; b <= n / 2; b++)
+            for (var c = 1; c <= n / 2; c++) {
+                d = n - a - b - c;
+                var a1 = a - b - c - d, b1 = 2 * b, c1 = 2 * c, d1 = 2 * d;
+                var b2 = b1 - a1 - c1 - d1, a2 = 2 * a1, c2 = 2 * c1, d2 = 2 * d1;
+                var c3 = c2 - a2 - b2 - d2, a3 = 2 * a2, b3 = 2 * b2, d3 = 2 * d2;
+                var d4 = d3 - a3 - b3 - c3, a4 = 2 * a3, b4 = 2 * b3, c4 = 2 * c3;
+                if (a4 == b4 && b4 == c4 && c4 == d4) {
+                    document.writeln(a + ' ' + b + ' ' + c + ' ' + d);
+                    document.writeln(a1 + ' ' + b1 + ' ' + c1 + ' ' + d1);
+                    document.writeln(a2 + ' ' + b2 + ' ' + c2 + ' ' + d2);
+                    document.writeln(a3 + ' ' + b3 + ' ' + c3 + ' ' + d3);
+                    document.writeln(a4 + ' ' + b4 + ' ' + c4 + ' ' + d4);
+
+                    break;
+                }
+            }
+
+
+
+</script>
+</pre>
+</body>
+</html>
