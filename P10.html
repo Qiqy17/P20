@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>P10</title>
+</head>
+<h1>
+    A、B、C三人进入决赛，
+    赛前A说：“B和C得第二，我得第一”；
+    B说：“我进入前两名，C得第三名”；
+    C说：“A不是第二，B不是第一”。
+    比赛产生了一、二、三名，
+    比赛结果显示：获得第一的选手全说对了，获得第二的选手说对了一句，获得第三的选手全说错了
+    。编程求出A、B、C三名选手的名次。
+
+</h1>
+<body>
+<pre>
+<script>
+for (var a = 1; a <= 3; a++)
+    for (var b = 1; b <= 3; b++)
+        for (var c = 1; c <= 3; c++) {
+            if (a === b || b === c || a === c) continue;
+            var ap = (b == 2 && c == 2), aq = (a == 1);
+            var bp = (b <= 2), bq = (c == 3);
+            var cp = (a !== 2), cq = (b !== 1);
+            if (a + ap + aq !== 3) continue;
+            if (b + bp + bq !== 3) continue;
+            if (c + cp + cq !== 3) continue;
+
+            document.writeln('' + a + b + c);
+        }
+</script>
+
+</pre>
+</body>
+</html>

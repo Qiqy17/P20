@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>P06</title>
+</head>
+<h1>
+    赵、钱、孙、李、周五人围着一张圆桌吃饭。饭后，
+    周回忆说：“吃饭时，赵坐在钱旁边，钱的左边是孙或李”；
+    李回忆说：“钱坐在孙左边，我挨着孙坐”
+    。结果他们一句也没有说对。请问，他们在怎样坐的？
+</h1>
+<body>
+<pre>
+<script>
+    function left(p, q) {
+        return (p + 1) % 5 == q;
+
+    }
+
+    function right(p, q) {
+        return left(q, p);
+    }
+
+    function near(p, q) {
+        return left(p, q) || right(p, q);
+
+    }
+
+    var zhao = 0;
+    for (var qian = 1; qian <= 4; qian++)
+        for (var sun = 1; sun <= 4; sun++)
+            for (var li = 1; li <= 4; li++)
+                for (var zhou = 1; zhou <= 4; zhou++) {
+                    if (qian === li || qian === sun || qian === zhou) continue;
+                    if (sun === li || sun === zhou) continue;
+                    if (li === zhou) continue;
+                    // 周回忆说：“吃饭时，赵坐在钱旁边，钱的左边是孙或李”；
+                    // 李回忆说：“钱坐在孙左边，我挨着孙坐”
+                    if (near(zhao, qian)) continue;
+                    if (left(sun, qian) || left(li, qian)) continue;
+                    if (left(qian, sun)) continue;
+                    if (near(li, sun)) continue;
+
+                    document.writeln('' + zhao + qian + sun + li + zhou);
+                }
+
+
+</script>
+</pre>
+</body>
+</html>
