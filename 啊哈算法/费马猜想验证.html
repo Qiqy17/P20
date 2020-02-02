@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>费马猜想</title>
+    <script type="text/javascript"
+            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {inlineMath: [['$','$'], ['\(','\)']]}
+});
+
+
+
+
+
+    </script>
+</head>
+<body>
+<h1>费马猜想</h1>
+<p>数学家费马曾给出一个公式： $f(n)={2}^{{2}^{n}}+1$，认为一切$f(n)$都是素数,这个数列增长的特别快，检验较大的 $ f(n)$ 是否是素数特别困难</p>
+<p>通过简单计算可以看出来
+    <br>$f(0)=3$ 是素数
+    <br>$f(1)=5$ 是素数
+    <br>$f(2)=17$ 是素数
+    <br>$f(3)=257$ 是素数
+    <br>$f(4)=65537$ 是素数
+</p>
+<p>
+    大数学家欧拉手动分解了$f(5)=4294967297=641 \times 6700417$ 从而否定了猜想，更一般的证明对于$n>=5$，一切$f(n)$均不是素数
+</p>
+
+
+<script>
+    function prime(n) {
+        if (n === 2 || n === 3)return true;
+        if (n % 2 === 0 || n < 2)return false;
+        for (let i = 3; i * i <= n; i += 2) {
+            if (n % i === 0)
+                return false;
+        }
+        return true;
+    }
+    function f(n) {
+        return Math.pow(2, 1 << n) + 1;
+    }
+
+    for (let i = 0; i <= 5; i++) {
+        document.writeln("$f(" + i + ")=" + f(i) + "$\t" + prime(f(i)) + '<br>');
+    }
+</script>
+</body>
+</html>
