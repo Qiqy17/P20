@@ -17,8 +17,8 @@
 <script>
     var n = 64;
     for (var a = n / 2; a <= n; a++)
-        for (var b = 1; b <= n / 2; b++)
-            for (var c = 1; c <= n / 2; c++) {
+        for (var b = 1; b <= n - a; b++)
+            for (var c = 1; c <= n - a - b; c++) {
                 d = n - a - b - c;
                 var a1 = a - b - c - d, b1 = 2 * b, c1 = 2 * c, d1 = 2 * d;
                 var b2 = b1 - a1 - c1 - d1, a2 = 2 * a1, c2 = 2 * c1, d2 = 2 * d1;
