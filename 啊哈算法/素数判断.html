@@ -3,14 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <title>素数判断</title>
+    <script type="text/javascript"
+            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {inlineMath: [['$','$'], ['\(','\)']]}
+});
+
+
+
+
+
+
+    </script>
 </head>
 <body>
-<h1>素数判断的方法</h1>
+<script>
 
-<h2>枚举2~-n O(n)</h2>
-<h2>枚举2~-sqrt(n) O(sqrt(n))</h2>
-<h2>枚举2~-n O(n)</h2>
-<h2>筛法造表O(nlogn),判断只需要O(1)空间O(n)</h2>
+    function primeLinear(n) {
+        if (n < 2)return false;//patch
+        for (let i = 2; i <= n - 1; i++) {
+            if (n % i === 0)
+                return false;
+        }
+        return true;
+    }
+    function primeSqrt(n) {
+        if (n < 2)return false;//patch
+        for (let i = 2; i * i <= n; i++) {
+            if (n % i === 0)
+                return false;
+        }
+        return true;
+
+    }
+    function primeSqrt2(n) {
+        if (n === 2)return true;
+        if (n < 2 || n % 2 === 0)return false;
+        for (let i = 3; i * i <= n; i += 2) {
+            if (n % i === 0)return false;
+        }
+        return true;
+
+    }
+
+
+</script>
+<h1>素数判断的方法</h1>
+<ul>
+    <li>枚举$2~n$ 复杂度$O(n)$</li>
+    <pre>
+        function primeLinear(n) {
+        if (n < 2)return false;//patch
+        for (let i = 2; i <= n - 1; i++) {//O(n)
+            if (n % i === 0)
+                return false;
+        }
+        return true;
+    }
+    </pre>
+    <script>
+        for (let i = 1; i <= 100; i++) {
+            if (primeLinear(i)) document.write(i + " ");
+        }
+
+    </script>
+
+
+    <li>枚举$ 2~-\sqrt{n}$ 复杂度 $ O(\sqrt{n})$</li>
+    <pre>
+    function primeSqrt(n) {
+        if (n < 2)return false;//patch
+        for (let i = 2,m=Math.floor(Math.sqrt(n)); i <=m; i++) {
+            if (n % i === 0)
+                return false;
+        }
+        return true;
+
+    }
+
+    </pre>
+    <script>
+        for (let i = 1; i <= 100; i++) {
+            if (primeSqrt(i)) document.write(i + " ");
+        }
+
+    </script>
+
+    <li>枚举$2~-sqrt(n）$复杂度$ O(\sqrt{n})$</li>
+    <pre>
+    function primeSqrt2(n) {
+         if (n === 2)return true;
+        if (n < 2 || n % 2 === 0)return false;
+        for (let i = 3; i * i <= n; i += 2) {
+            if (n % i === 0)return false;
+        }
+        return true;
+
+    }
+
+    </pre>
+    <script>
+        for (let i = 1; i <= 100; i++) {
+            if (primeSqrt2(i)) document.write(i + " ");
+        }
+
+    </script>
+    <li>筛法造表O(nlogn),判断只需要O(1)空间O(n)</li>
+</ul>
 
 
 </body>
