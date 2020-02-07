@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function gcd(a, b) {
+        for (var i = a + b; i >= 1; i--) {
+            if (a % i === 0 && b % i === 0)
+                return i;
+
+        }
+        return 0;
+
+    }
+
+    document.write(gcd(10000000007, 100000000008));
+</script>
+</body>
+</html>
