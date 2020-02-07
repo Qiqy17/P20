@@ -16,6 +16,7 @@ tex2jax: {inlineMath: [['$','$'], ['\(','\)']]}
 
 
 
+
     </script>
 </head>
 <body>
@@ -111,6 +112,44 @@ tex2jax: {inlineMath: [['$','$'], ['\(','\)']]}
 
     </script>
     <li>筛法造表O(nlogn),判断只需要O(1)空间O(n)</li>
+    <pre>
+        let n = 100 + 1;
+        let prime = new Array(n);
+        //把1~n的所有的数都放入筛中
+        for (let i = 0; i < n; i++)prime[i] = true;
+        prime[0] = prime[1] = false;//删除0，1
+        for (let i = 2; i * i <= n; i++) {
+            for (let j = i * 2; j < n; j += i) {//保留i，i一定是素数，删除i的所有倍数
+                prime[j] = false;
+            }
+
+        }
+        for (let i = 0; i < n; i++) {
+            if (prime[i])
+                document.writeln(i + " ");
+        }
+
+    </pre>
+    <script>
+        let n = 100 + 1;
+        let prime = new Array(n);
+        //把1~n的所有的数都放入筛中
+        for (let i = 0; i < n; i++)prime[i] = true;
+        prime[0] = prime[1] = false;//删除0，1
+        for (let i = 2; i * i <= n; i++) {
+            for (let j = i * 2; j < n; j += i) {//保留i，i一定是素数，删除i的所有倍数
+                prime[j] = false;
+            }
+
+        }
+        for (let i = 0; i < n; i++) {
+            if (prime[i])
+                document.writeln(i + " ");
+        }
+
+
+    </script>
+
 </ul>
 
 
