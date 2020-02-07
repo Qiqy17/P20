@@ -26,12 +26,11 @@
     function lcm(a, b) {
         return a * b / gcd(a, b);
     }
-    //    document.write(lcm(6, 8));
-    document.write([1, 2, 3, 4, 5, 6, 7].reduce((x, y) => x + y, 1000) + "<br>");
-    document.write([1, 2, 3, 4, 5, 6, 7].reduce((x, y) => x * y, 1) + "<br>");
-    document.write([1, 2, 3, 4, 5, 6, 7].reduce((x, y) => x > y ? x : y, 1) + "<br>");
-    document.write([1, 2, 3, 4, 5, 6, 7].reduce(gcd, 0) + "<br>");
-    document.write([1, 2, 3, 4, 5, 6, 7].reduce(lcm, 0) + "<br>");
+    var S=1;
+    for(var i=1;i<=6;i++){
+        S=lcm(S,i);
+    }
+    document.write(S);
 </script>
 </body>
 </html>
