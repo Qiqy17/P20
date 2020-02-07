@@ -6,8 +6,8 @@
 </head>
 <body>
 <script>
-    function gcd(a, b) {
-        for (var i = a + b; i >= 1; i--) {
+    function gcd_raw(a, b) {
+        for (let i = a + b; i >= 1; i--) {
             if (a % i === 0 && b % i === 0)
                 return i;
 
@@ -15,8 +15,18 @@
         return 0;
 
     }
-
-    document.write(gcd(10000000007, 100000000008));
+    function gcd(a, b) {
+        while (b !== 0) {
+            let r = a % b;
+            a = b;
+            b = r;
+        }
+        return a;
+    }
+    function lcm(a, b) {
+        return a * b / gcd(a, b);
+    }
+    document.write(lcm(6, 8));
 </script>
 </body>
 </html>
