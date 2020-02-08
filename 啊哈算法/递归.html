@@ -9,6 +9,16 @@
 <ul>
     n!实现
     <li>非递归实现</li>
+    <pre>
+        function factorial_raw(n) {
+            let S = 1;
+            for (let i = 2; i <= n; i++) {
+                S *= i;
+            }
+            return S;
+        }
+        document.write(factorial_raw(7))
+    </pre>
     <script>
         function factorial_raw(n) {
             let S = 1;
@@ -21,6 +31,14 @@
 
     </script>
     <li> 递归实现</li>
+    <pre>
+        function factorial1(n) {
+            if (n <= 1)//递归终点 解决原子问题
+                return 1;
+            else //递归体 化简问题
+                return n * factorial1(n - 1);
+        }
+    </pre>
     <script>
         function factorial1(n) {
             if (n <= 1)//递归终点 解决原子问题
@@ -31,6 +49,11 @@
         document.write(factorial1(7))
     </script>
     <li> 递归实现2</li>
+    <pre>
+        function factorial(n) {
+            return n <= 1 ? 1 : n * factorial1(n - 1);
+        }
+    </pre>
     <script>
         function factorial(n) {
             return n <= 1 ? 1 : n * factorial1(n - 1);
@@ -39,25 +62,47 @@
     </script>
 </ul>
 <p>
-<ol>计算整数长度的各种算法</ol>
-<li>计算整数长度(string)</li>
+<ol>计算整数长度的各种算法
+    <li>计算整数长度(string)</li>
+    <pre>
+        function length1(num) {
+            return (num + '').length;
+        }
+    </pre>
 <script>
-    function length0(num) {
+    function length1(num) {
         return (num + '').length;
 
     }
-
+    document.write(length1(12345) + "<br>");
 
 </script>
 
 <li>数学方法（对数）</li>
+    <pre>
+    function length2(num) {
+        return Math.floor(Math.log10(num) + 1);
+
+    }
+    </pre>
 <script>
     function length2(num) {
         return Math.floor(Math.log10(num) + 1);
 
     }
+    document.write(length2(12345) + "<br>");
 </script>
 <li>循环方法</li>
+    <pre>
+    function length3(num) {
+        let tot = 0;
+        while (num > 0) {
+            num = Math.floor(num / 10);
+            ++tot;
+        }
+        return tot;
+    }
+    </pre>
 <script>
     function length3(num) {
         let tot = 0;
@@ -67,16 +112,22 @@
         }
         return tot;
     }
-
+    document.write(length3(12345) + "<br>");
 </script>
 <li>递归方法</li>
+    <pre>
+    function length(num) {
+        if (num < 10)return 1;
+        return length(Math.floor(num / 10)) + 1;
+    }
+    </pre>
 <script>
     function length(num) {
         if (num < 10)return 1;
         return length(Math.floor(num / 10)) + 1;
     }
-
+    document.write(length(12345) + "<br>");
 </script>
-</p>
+</ol>
 </body>
 </html>
