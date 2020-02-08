@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>进制转化算法</title>
+    <script type="text/javascript"
+            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {inlineMath: [['$','$'], ['\(','\)']]}
+});
+
+
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+<div align="center">
+    <h1>多项式计算和展开</h1>
+    <p>$$b_{n}r^{n}+b_{n-1}r^{n-1}+...+b_{1}r+b_{0},满足 0 \le b_{i} \lt r $$</p>
+    <ul>
+        <li>定义法$O(n^2)$</li>
+        <li>Horner算法$O(n)$</li>
+        $$
+        b_{n}r^{n}+b_{n-1}r^{n-1}+...+b_{1}r+b_{0}
+        =((...(b_{n}r+b_{n-1})r+.....))))r+b_1)r+b_0
+
+
+        $$
+        <pre>
+            t=0
+            for(i =n;i>=0;i--){
+                t=t*r+b[i];
+            }
+
+
+        </pre>
+    </ul>
+
+    <p>
+        系数$b_i$多项式
+    </p>
+
+    <h1>十进制n转r进制(r=2)短除法</h1>
+    $$b_{i}=n \mod r,n=\lfloor {\frac{n}{r}} \rfloor$$
+    <h1>任意r进制转十进制(horner)算法</h1>
+
+    <h1>例子</h1>
+    <ul>
+        <li id="screen">
+            <script>
+                let b = '01000001';
+                let B = b.split('').reverse().map((x) => parseInt(x));
+                let n = b.length - 1;
+                let t = 0;
+                for (let i = n; i >= 0; i--) {
+                    t = t * 2 + B[i];
+                }
+                document.getElementById('screen').innerHTML = b + "[2]=>" + t + "[10]";
+
+            </script>
+
+
+        </li>
+        <li id="screen2">
+            <script>
+                n = 6;
+                B = [];
+                while (n > 0) {
+                    let t = n % 2;
+                    B.push(t);
+                    n = Math.floor(n / 2);
+                }
+                document.getElementById('screen2').innerHTML = t + "[10]=>" + B.reverse().join(''
+                    ) + "[2]";
+
+            </script>
+
+
+        </li>
+
+    </ul>
+</div>
+</body>
+</html>
