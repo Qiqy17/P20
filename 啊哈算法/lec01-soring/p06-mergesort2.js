@@ -7,8 +7,8 @@
 
 
 function main() {
-    let x = [1, 3, 5, 7, 9, 2, 4, 5, 8, 10, 14];
-    let mid = 4;
+    let x = [1, 2, 3, 5, 7, 9, 4, 5, 8, 10, 14];
+    let mid = Math.floor(x.length / 2);
     let a = [1, 3, 5, 7, 9,];
     let b = [2, 4, 5, 8, 10, 14];
     let c = new Array(a.length + b.length);

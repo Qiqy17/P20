@@ -17,9 +17,9 @@ function sort(arr) {
 }
 
 function main() {
-    let arr = [2, 3, 5, 5, 8];
+    let arr = [5, 3, 5, 2, 8];
     sort(arr);
-    arr.forEach(x => console.log(x));
+    // arr.forEach(x => console.log(x));
 }
 
 
