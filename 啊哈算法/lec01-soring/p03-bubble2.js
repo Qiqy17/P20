@@ -3,7 +3,7 @@
  */
 function sort(arr) {
     for (let i = 0, n = arr.length; i < n; i++) {
-        for (let j = n - 2; j > i; j--) {
+        for (let j = n - 2; j >= i; j--) {
             if (arr[j] > arr[j + 1]) {
                 let t = arr[j + 1];
                 arr[j + 1] = arr[j];
