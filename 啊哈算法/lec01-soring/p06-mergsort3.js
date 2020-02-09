@@ -1,15 +1,15 @@
 /**
  * Created by webturing on 2020/2/9.
  */
-
+let buffer = new Array(1000);
 function sort(arr, from, to) {
-    if (from >= to)return;
+    if (from >= to) return;
     let mid = Math.floor((from + to) / 2);
     sort(arr, from, mid);
     sort(arr, mid + 1, to);
 
-    let buffer = new Array(to - from + 1);
-    let i = from, j = mid + 1, k = 0;
+
+    let i = from, j = mid + 1, k = from;
     while (i <= mid && j <= to) {
         if (arr[i] <= arr[j]) {
             buffer[k++] = arr[i++];
@@ -23,8 +23,8 @@ function sort(arr, from, to) {
     while (j <= to) {
         buffer[k++] = arr[j++];
     }
-    for (k = 0; k < buffer.length; k++) {
-        arr[from + k] = buffer[k];
+    for (k = from; k <= to; k++) {
+        arr[k] = buffer[k];
     }
 
 
