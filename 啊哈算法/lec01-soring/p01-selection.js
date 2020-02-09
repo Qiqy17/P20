@@ -7,7 +7,17 @@ function sort(arr) {
         //arr[i,n-1] is unsorted
         //find minimum element arr[k]
         //swap arr[k] and arr[i]
-
+        let k = i;
+        for (let j = i + 1; j < n; j++) {
+            if (arr[j] < arr[k]) {
+                k = j;
+            }
+        }
+        if (k !== i) {
+            let temp = arr[i];
+            arr[i] = arr[k];
+            arr[k] = temp;
+        }
 
     }
 
