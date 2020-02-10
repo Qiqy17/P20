@@ -13,6 +13,7 @@ rl.on('line', function (line) {
     if (user == key) {
 
         console.log('Congratulations');
+        return;
 
     } else if (user > key) {
         right = user - 1;

@@ -9,8 +9,7 @@ function binary_search(arr, key, left, right) {//O(log n)
 
 }
 
-function main() {
-    let n = 1000005;
+function nlogn_search(n) {
     let a = new Array(n + 1);
     for (let i = 0; i <= n; i++)a[i] = i;
     //console.log(a);
@@ -29,5 +28,5 @@ function main() {
     }
 
 }
-main();
+nlogn_search(1000000);
 
