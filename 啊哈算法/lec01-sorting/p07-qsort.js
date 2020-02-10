@@ -6,10 +6,9 @@ function sort(a, left, right) {
     let temp = a[left];
     let i = left;
     let j = right;
-    while (i != j) {
+    while (i < j) {
         while (a[j] >= temp && i < j) {
             j--;
-            12345678
         }
         while (a[i] < temp && i < j) {
             i++;
