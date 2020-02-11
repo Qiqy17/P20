@@ -4,8 +4,8 @@
 ### 线性结构
 - 数组
 - 链表
-- 栈 Stack
-- 队列 Queue
+- 栈 Stack //FILO =First In Last Out
+- 队列 Queue //FIFO =First In First Out
 - 哈希表
 
 ### 树结构
