@@ -37,17 +37,14 @@ function show() {
 function main() {
     let Q = [1,9,2,6,3,8,4,7,5];
     init();
-    for (let i = 0; i < Q.length; i++) {
-        push(Q[i]);
+    for (let i = 9; i >= 1; i--) {
+        if (!empty()) {
+            push(peek());
+            pop();
+        }
+        push(i);
     }
-    while (!empty()) {
-        console.log(peek());
-        pop();
-        if(empty())break;
-        let x = peek();
-        pop();
-        push(x);
-    }
+    show();
 }
 
 main();
