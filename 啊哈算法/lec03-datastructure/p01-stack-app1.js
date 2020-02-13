@@ -25,7 +25,7 @@ function show() {
     }
 }
 
-
+//进制转化
 function main() {
     let n = 6;
     while (n > 0) {

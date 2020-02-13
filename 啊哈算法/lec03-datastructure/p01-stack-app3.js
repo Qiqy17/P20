@@ -27,7 +27,7 @@ function show() {
     }
 }
 
-
+//逆波兰式求值
 function main() {
     let exp = [1, 2, '+', 3, 4, '+', '*'];
     init();

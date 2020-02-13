@@ -27,7 +27,7 @@ function show() {
     }
 }
 
-
+//括号配对算法
 function main() {
     let exp = '((()))';
     init();
