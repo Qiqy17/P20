@@ -10,10 +10,7 @@ function dfs(k) {
     if (k == 4) {
         var ans = " ";
         for (let i = 0; i < 4; i++) {
-
             ans += a[i];
-
-
         }
         if (a[0] + a[1] == a[2] + a[3])
             console.log(ans);

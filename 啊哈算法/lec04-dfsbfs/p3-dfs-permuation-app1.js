@@ -8,21 +8,18 @@ let b = [0, 0, 0, 0, 0, 0, 0, 0];
 
 function dfs(k) {
     if (k == 8) {
-        var flag = 1;
+        let flag = 1;
         for (let i = 0; i < 8; i++)
             for (let j = i + 1; j < 8; j++) {
-                var slop = (a[i] - a[j]) / (i - j);
+                let slop = (a[i] - a[j]) / (i - j);
                 if (slop == 1 || slop == -1) {
                     flag = 0;
                 }
             }
         if (flag) {
-            var ans = " ";
+            let ans = " ";
             for (let i = 0; i < 8; i++) {
-
                 ans += "(" + i + "," + a[i] + ")";
-
-
             }
             console.log(ans);
             for (let i = 0; i < 8; i++) {
@@ -35,8 +32,6 @@ function dfs(k) {
                 }
                 console.log(ans);
             }
-
-
         }
 
         return;
